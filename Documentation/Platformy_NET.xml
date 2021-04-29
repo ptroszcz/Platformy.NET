@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Platformy_NET</name>
+    </assembly>
+    <members>
+        <member name="T:Platformy_NET.AddingWindow">
+            <summary>
+            Klasa okna Adding Window związanego z dodawaniem nowych utworów do biblioteki.
+            Zawiera wszystkie metody związane z integracją z użytkownikiem na oknie dodawania  nowego utworu.
+            </summary>
+            <summary>
+            AddingWindow
+            </summary>
+        </member>
+        <member name="F:Platformy_NET.AddingWindow.data">
+            <summary>
+            Obiekt używanej bazy danych klasy DataBaseUsage
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.AddingWindow.#ctor">
+            <summary>
+            Konstruktor okna odpowiedzialnego za dodawanie nowych utworów do wyświetlanej listy.
+            Inicjalizuje obiekt klasy zwiazany z bazą danych.
+            Wyświetla okno dodawania nowego utworu.
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.AddingWindow.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za reakcję aplikacji na wciśnięcie przycisku "Add" w oknie AddingWindow
+            Odczytuje wpisane przez użytkownika nazwy wykonawcy, utworu oraz albumu.
+            Nazwy wykonawcy i tytułu muszą zostać podane. Nazwa utworu jest opcjonalna.
+            Nazwa wykonawcy nie może być dłuższa niż 30 znaków.
+            Nazwa tytułu nie możę być dłuższa niż 30 znaków.
+            Nazwa albumu nie możę być dłuższa niż 20 znaków.
+            Jeżeli wszystkie warunki są spełnione tworzy nowy obiekt klasy Song, dodaje go do bazy danych i wyłącza okno AddingWindow.
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisem "Add"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.AddingWindow.Cancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za wyłączanie okna AddingWindow po naciśnięciu przycisku Cancel
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Cancel"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.AddingWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Platformy_NET.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Platformy_NET.ButtonTestsClass">
+            <summary>
+            Klasa stworzona w celu napisania testów jednostkowych dla metod związanych z naciskaniem odpowiednich przycisków.
+            Zawiera metody związane z przyciskiem dodającym nowy utwór w oknie AddingWindow oraz z przyciskiem modyfikującym dany utwór na liście w oknie ModifyWindow
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.ButtonTestsClass.#ctor">
+            <summary>
+            Konstruktor domyślny klasy ButtonTestsClass
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.ButtonTestsClass.Add_Button_Click_Test(System.String,System.String,System.String)">
+            <summary>
+            Metoda symulująca naciśnięcie przycisku dodania nowego utworu do biblioteki
+            Działa analogicznie do oryginalnego wywołania przycisku, jednak zamiast wyświetlać komunikat, zwraca stringa odpowiadającego komunikatowi, który został by wyświetlony albo obiektowi klasy Song po wywołaniu metody ToString()
+            </summary>
+            <param name="_artist">Nazwa artysty, który ma zostać dodany do list</param>
+            <param name="_title">Tytuł utwotu, który ma zostać dodany do listy</param>
+            <param name="_album">Nazwa albumu, która ma zostać dodana do listy</param>
+            <returns>Komunikat o nieporpawnych danych lub w przypadku poprawności wprowadzonych danych wynik metody ToString() klasy Song na nowo utworzonym obiekcie tej klasy</returns>
+        </member>
+        <member name="M:Platformy_NET.ButtonTestsClass.Modify_Button_Click_Test(Platformy_NET.Song,System.String,System.String,System.String)">
+            <summary>
+            Metoda symulująca naciśnięcie przycisku modyfikacji danego utworu do biblioteki
+            Działa analogicznie do oryginalnego wywołania przycisku, jednak zamiast wyświetlać komunikat, zwraca stringa odpowiadającego komunikatowi, który został by wyświetlony albo obiektu klasy Song po wywołaniu metody ToString()
+            </summary>
+            <param name="_artist">Nowa nazwa artysty</param>
+            <param name="_title">Nowy tytuł artysty</param>
+            <param name="_album">Nowa nazwa albumu danego utworu</param>
+            <param name="before_modify">Obiekt klasy Song, który będzie modyfikowany</param>
+            <returns>Komunikat o nieporpawnych danych lub w przypadku poprawności wprowadzonych danych wynik metody ToString() klasy Song na nowo utworzonym obiekcie tej klasy</returns>
+        </member>
+        <member name="T:Platformy_NET.DataBase">
+            <summary>
+            Klasa związana z listą wszystkich utworów, które będą przechowywane w bazie danych
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.DataBase.Library">
+            <summary>
+            Reprezentacja wszystkich obiektów klasy Song, które będą przechowywane w bazie danych
+            </summary>
+        </member>
+        <member name="T:Platformy_NET.DataBaseUsage">
+            <summary>
+            Klasa związana z komunikacją z bazą danych
+            Zawiera wszystkie metody związane z operacjami na bazie dancyh
+            </summary>
+        </member>
+        <member name="F:Platformy_NET.DataBaseUsage._dataBase">
+            <summary>
+            Obiekt klasy DataBase przechowujący listę obiektów klasy Song, czyli listę utworów, które będą sie znajdować w bazie danych
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.DataBaseUsage.#ctor">
+            <summary>
+            Konstruktor domyślny klasy DataBaseUsage.
+            Inicjuje obiekt klasy DataBase
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.DataBaseUsage.Add(Platformy_NET.Song)">
+            <summary>
+            Metoda dodająca do bazy danych nowy utwór
+            </summary>
+            <param name="new_song">Obiekt klasy Song, który ma zostać dodany do bazy danych</param>
+        </member>
+        <member name="M:Platformy_NET.DataBaseUsage.Remove(Platformy_NET.Song)">
+            <summary>
+            Metoda usuwająca wybrany utwór(obiekt klasy Song) z bazy danych
+            </summary>
+            <param name="song_to_delete">Obiekt klasy Song, który ma zostać usunięty z bazy danych</param>
+        </member>
+        <member name="M:Platformy_NET.DataBaseUsage.Modify(Platformy_NET.Song,Platformy_NET.Song)">
+            <summary>
+            Metoda modyfikująca istniejący już utwór w bazie danych
+            </summary>
+            <param name="song_to_modify">Obiekt klasy Song, który ma zostać zmodyfikowany w bazie danych</param>
+            <param name="modified_song">Obiekt klasy Song, którego parametry Artist, Title oraz Album będą nowymi parametrami wskazanego <paramref name="song_to_modify"/></param>
+        </member>
+        <member name="M:Platformy_NET.DataBaseUsage.clear">
+            <summary>
+            Metoda czyszcząca cała zawartość bazy danych związaną z utworami
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.DataBaseUsage.getSongList">
+            <summary>
+            Metoda zwracająca listę wszystkich utworów(obiektów klasy Song) znajdujących się w bazie danych.
+            </summary>
+            <returns>Lista obiektów klasy Song, znajdująca się w bazie danych</returns>
+        </member>
+        <member name="T:Platformy_NET.MainWindow">
+            <summary>
+            Główna klasa MainWindow.
+            Zawiera wszystkie metody związane z intereakcją z użytkownikiem w głównym oknie aplikacji.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="F:Platformy_NET.MainWindow.data">
+            <summary>
+            Obiekt używanej bazy danych klasy DataBaseUsage
+            </summary>
+        </member>
+        <member name="F:Platformy_NET.MainWindow.songlibrary">
+            <summary>
+            Struktura zbierająca dynamicznie dane o obiektach klasy Song
+            </summary>
+        </member>
+        <member name="F:Platformy_NET.MainWindow.YouTube">
+            <summary>
+            Obiekt klasy YTApi odpowiedzialny za komunikację z Api YouTube'a
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.#ctor">
+            <summary>
+            Kontstruktor głównego okna aplikacji.
+            Inicjalizuje obiekty klas zwiazane z bazami danych, YouTube Api.
+            Wczytuje z bazy listę zapisanych utworow - obiektów klasy Song przy uruchamianiu się.
+            Wyświetla główne okno aplikacji.
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za reakcję aplikacji na wciśnięcie przycisku "Add"
+            Otwiera okno AddingWindow, a po jego zamknięciu odświeża wyświetlaną listę utworów.
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Add"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.Remove_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za reakcję aplikacji na wciśnięcie przycisku "Remove"
+            Jeżeli wybrano utwór na liście to wyszukuje go i wywołuję metodę bazy danych do jego usunięcia.
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Remove"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.Modify_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za reakcję aplikacji na wciśnięcie przycisku "Modify"
+            Jeżeli wybrano utwór na liście otwiera okno ModifyWindow i po jego zamknięcię aktualizuje
+            wyświetlaną listę utworów(obiektów klasy Song)
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Modify"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.Find_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za reakcję aplikacji na wciśnięcie przycisku "Find On Youtube"
+            Jeżeli wybrano utwór na liście wyświetla, dla którego obiektu poszukuje filmu na Youtube'ie.
+            Wywołuje metodę Find_Video, która będzie się wykonywać asynchronicznie względem reszty kodu.
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Find on Youtube"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.Find_Video(System.String)">
+            <summary>
+            Metoda asynchroniczna wywołująca metodę klasy YTApi, która łączy się z Api Youtube'a w celu wyszukania podanej frazy z argumentu <paramref name="songName"/>.
+            Przechwytuje błędy związane z niepoprawnym połączeniem się z zewnętrzym Api Youtube i wyświetla komunikat błędu.
+            Po wyszukiwaniu sprawdza, czy dla podanego <paramref name="songName"/> uzyskano wynik. W przeciwnym wypadku wyświetli komunikat o nieudanym wyszukiwaniu.
+            Sprawdza czy wyszukany link jest dłuższy niż 100 i jeśli tak wyświetla komunikat o podejrzanym linku, nie wyświetlając go.
+            Jeżeli wyszukany link będzie prawidłowy zostanie on wyświetlony.
+            </summary>
+            <param name="songName">Nazwa frazy, która będzie wyszukiwana na Youtube'ie - domyślnie nazwa autora, utworu i albumu</param>
+            <returns>Obiekt klasy Task - czyli pojedyncza operacja, która nie zwraca wartości i wykonuje sie asynchronicznie</returns>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.Exit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za wyłączanie aplikacji po naciśnięciu przycisku Exit.
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Exit"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Platformy_NET.ModifyWindow">
+            <summary>
+            Klasa okna ModifyWindow związanego z dodawaniem nowych utworów do biblioteki.
+            Zawiera wszystkie metody związane z integracją z użytkownikiem na oknie modyfikacji wybranego utworu.
+            </summary>
+            <summary>
+            ModifyWindow
+            </summary>
+        </member>
+        <member name="F:Platformy_NET.ModifyWindow.data">
+            <summary>
+            Obiekt używanej bazy danych klasy DataBaseUsage
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.ModifyWindow.#ctor">
+            <summary>
+            Konstruktor okna odpowiedzialnego za modyfikację utworów na wyświetlanej liscie.
+            Inicjalizuje obiekt klasy zwiazany z bazą danych.
+            Wyświetla okno modyfikacji nowego utworu.
+            W polach przeznaczonych na wpisanie nowych napisów ustawia domyślnie te odpowiadające wybranemu utworowi z listy.
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.ModifyWindow.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za reakcję aplikacji na wciśnięcie przycisku "Modify" w oknie ModifyWindow
+            Odczytuje wpisane przez użytkownika nazwy wykonawcy, utworu oraz albumu.
+            Nazwy wykonawcy i tytułu muszą zostać podane. Nazwa utworu jest opcjonalna.
+            Nazwa wykonawcy nie może być dłuższa niż 30 znaków.
+            Nazwa tytułu nie możę być dłuższa niż 30 znaków.
+            Nazwa albumu nie możę być dłuższa niż 20 znaków.
+            Jeżeli któraś z nazw jest pusta to odpowiednie dla tej nazwy pole jest niemodyfikowane.
+            Jeżeli wszystkie warunki są spełnione wywołuje metodę klasy DataBaseUsage modyfikującą wybrany utwór w bazie danych i wyłącza okno ModifyWindow.
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisem "Modify"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.ModifyWindow.Cancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Metoda odpowiedzialna za wyłączanie okna ModifyWindow po naciśnięciu przycisku Cancel
+            </summary>
+            <param name="sender">Odwołanie do przycisku, któy wywołał zdarzenie w tym przypadku przycisk z napisenm "Cancel"</param>
+            <param name="e">Obiekt specyficzny dla zdarzenia</param>
+        </member>
+        <member name="M:Platformy_NET.ModifyWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Platformy_NET.Song">
+            <summary>
+            Klasa przechowująca informację o jednym utworze.
+            Zawiera metodę związaną z przetwarzaniem obiektu tej Klasy na string.
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.Song.ID">
+            <summary>
+            ID danego utworu.
+            Wykorzystywane przez bazę danych.
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.Song.Artist">
+            <summary>
+            Nazwa wykonawcy utworu.
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.Song.Title">
+            <summary>
+            Tytuł utworu.
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.Song.Album">
+            <summary>
+            Nazwa albumu, z którego jest album
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.Song.#ctor">
+            <summary>
+            Konstruktor domyślny bezparametryczny klasy Song.
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.Song.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Konstruktor z parametrami klasy Song.
+            </summary>
+            <param name="Artist">Nazwa wykonwacy utworu</param>
+            <param name="Title">Tytuł utworu</param>
+            <param name="Album">Nazwa albumu - domyślnie "None", jeżeli nie zostanie podane</param>
+        </member>
+        <member name="M:Platformy_NET.Song.ToString">
+            <summary>
+            Wyświetla napis związany z poszczególnymi polami klasy.
+            Postać: "Wykonawca" - "Tytuł" (from Album: "Album")
+            Zawartość nawiasu wyświetla sie tylko jeżeli pole Album jest różne od "None"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Platformy_NET.YTApi">
+            <summary>
+            Klasa odpowiedzialna za łaczenie się z zewnętrznym serwerem Api YouTube.
+            Zawiera wszystkie metody związane z połączeniem z Api Youtube.
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.YTApi.Search_Word">
+            <summary>
+            Nazwa wyszukiwanego utworu.
+            </summary>
+        </member>
+        <member name="P:Platformy_NET.YTApi.FoundVideos">
+            <summary>
+            Lista linków związanych z wyszukanym utworem.
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.YTApi.#ctor">
+            <summary>
+            Konstruktor domyślny klasy YTApi inicjujący listę na linki do znalezionych utworów oraz wyszukiwane słowo.
+            </summary>
+        </member>
+        <member name="M:Platformy_NET.YTApi.Search(System.String)">
+             <summary>
+             Asynchroniczna metoda ustawiająca wyszukiwany utwór na <paramref name="searchsong"/> oraz czyszcząca listę odnalezionych linków do utworów.
+             Wywołuje metodą Run tej samej klasy, łączącej się z Api Youtube'a.
+             </summary>
+             <param name="searchsong">Nazwa wyszukiwanego utworu</param>
+             <returns>Obiekt klasy Task - czyli pojedyncza operacja, która nie zwraca wartości i wykonuje sie asynchronicznie</returns>
+            <exception cref="T:System.AggregateException">Błąd rzucony, gdy nie powiedzie się połączenie z Api Youtube'a</exception>
+        </member>
+        <member name="M:Platformy_NET.YTApi.Run">
+             <summary>
+             Asynchroniczna metoda łącząca się z Api Youtuba w celu wyszukania linku do wskazanej w polu Search_Word klasy YTApi, dla której zostanie wywołany, nazwy utworu.
+             Wyszukane linki do utworów dodaje na listę FoundVideos klasy YTApi, dla której została wywołana
+             Metoda wyszukuje 3 pierwsze wyszukiwania wskazanego słowa na Youtube, którym mogą być zarówno kanały, playlisty jak i filmy, ale przetwarza tylko filmy 
+             </summary>
+             <returns>Obiekt klasy Task - czyli pojedyncza operacja, która nie zwraca wartości i wykonuje sie asynchronicznie</returns>
+            <exception cref="T:System.AggregateException">Błąd rzucony, gdy nie powiedzie się połączenie z Api Youtube'a</exception>
+        </member>
+    </members>
+</doc>
