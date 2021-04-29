@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platformy_NET", "Platformy_NET.csproj", "{F385073E-9008-4C97-972D-8C6951786B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatformyTests", "..\PlatformyTests\PlatformyTests.csproj", "{234D371A-9919-4685-A929-BCEB02735735}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F385073E-9008-4C97-972D-8C6951786B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F385073E-9008-4C97-972D-8C6951786B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F385073E-9008-4C97-972D-8C6951786B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F385073E-9008-4C97-972D-8C6951786B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{234D371A-9919-4685-A929-BCEB02735735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{234D371A-9919-4685-A929-BCEB02735735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{234D371A-9919-4685-A929-BCEB02735735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{234D371A-9919-4685-A929-BCEB02735735}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F349A05-FC75-418B-A8E5-C470370D8C1C}
+	EndGlobalSection
+EndGlobal

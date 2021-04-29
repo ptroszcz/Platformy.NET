@@ -1,0 +1,27 @@
+﻿<Window x:Class="Platformy_NET.ModifyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Platformy_NET"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="ModifyWindow" Height="230" Width="600" Icon="\images\icon.ico">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8B1313"/>
+                <GradientStop Color="#FFDA1111" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock Text="Artist:" TextWrapping="Wrap" Margin="10,15,520,150" FontWeight="Bold"/>
+        <TextBlock Text="Title:" TextWrapping="Wrap" Margin="10,65,520,100" FontWeight="Bold"/>
+        <TextBlock Text="Album:" TextWrapping="Wrap" Margin="10,115,520,50" RenderTransformOrigin="1.809,0.946" FontWeight="Bold"/>
+        <TextBox x:Name="ModifyArtist" Margin="90,10,30,150" TextAlignment="Left" Background="#FFEADEDE"/>
+        <TextBox x:Name="ModifyTitle" TextAlignment="Left" Margin="90,60,30,100" Background="#FFEADEDE"/>
+        <TextBox x:Name="ModifyAlbum" TextAlignment="Left" Margin="90,110,30,50" Background="#FFEADEDE"/>
+        <Button x:Name="Modify_Button" Content="Modify" Click="Button_Click" HorizontalAlignment="Left" Margin="290,150,0,0" VerticalAlignment="Top" />
+        <Button x:Name="Cancel_Button" Content="Cancel" Click="Cancel_Click" HorizontalAlignment="Left" Margin="530,150,0,0" VerticalAlignment="Top" />
+    </Grid>
+</Window>
