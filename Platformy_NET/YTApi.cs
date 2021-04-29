@@ -84,7 +84,7 @@ namespace Platformy_NET
 
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "AIzaSyDumIwNVDfjGLDII8w3_HEC89mbnhepIK4",
+                ApiKey = "Podany w mailu",
                 ApplicationName = this.GetType().ToString()
             });
 
